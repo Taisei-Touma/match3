@@ -1,0 +1,6 @@
+﻿  AppMain.cpp
+C:\PG\マッチ３\match3(Visual Studio)\match3(Visual Studio)\AppMain.cpp(60,35): warning C4229: 旧形式が使用されています: データの修飾子は無視されます。
+C:\PG\マッチ３\match3(Visual Studio)\match3(Visual Studio)\AppMain.cpp(60,21): error C2065: '_In_HINSTANCE': 定義されていない識別子です。
+C:\PG\マッチ３\match3(Visual Studio)\match3(Visual Studio)\AppMain.cpp(60,35): error C2146: 構文エラー: ')' が、識別子 'hInstance' の前に必要です。
+C:\PG\マッチ３\match3(Visual Studio)\match3(Visual Studio)\AppMain.cpp(62,2): error C2143: 構文エラー: ';' が '{' の前にありません。
+C:\PG\マッチ３\match3(Visual Studio)\match3(Visual Studio)\AppMain.cpp(5): fatal  error C1075: '{': 一致するトークンが見つかりませんでした
