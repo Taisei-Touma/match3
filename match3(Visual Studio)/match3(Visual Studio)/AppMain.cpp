@@ -75,6 +75,8 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
 	//Dxライブラリ使用の終了処理
 	DxLib_End();
 
+	//追加確認7/14/11:23
+
 	return 0;
 }
 
