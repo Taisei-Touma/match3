@@ -3,6 +3,17 @@ C:\PG\マッチ３\match3\match3(Visual Studio)\match3(Visual Studio)\AppMain.cp
 C:\PG\マッチ３\match3\match3(Visual Studio)\match3(Visual Studio)\AppMain.cpp(60,21): error C2065: '_In_HINSTANCE': 定義されていない識別子です。
 C:\PG\マッチ３\match3\match3(Visual Studio)\match3(Visual Studio)\AppMain.cpp(60,35): error C2146: 構文エラー: ')' が、識別子 'hInstance' の前に必要です。
 C:\PG\マッチ３\match3\match3(Visual Studio)\match3(Visual Studio)\AppMain.cpp(62,2): error C2143: 構文エラー: ';' が '{' の前にありません。
-C:\PG\マッチ３\match3\match3(Visual Studio)\match3(Visual Studio)\AppMain.cpp(5): fatal  error C1075: '{': 一致するトークンが見つかりませんでした
-  ソース.cpp
-  コードを生成中...
+C:\PG\マッチ３\match3\match3(Visual Studio)\match3(Visual Studio)\AppMain.cpp(76,23): error C2065: 'D_ERROR': 定義されていない識別子です。
+C:\PG\マッチ３\match3\match3(Visual Studio)\match3(Visual Studio)\AppMain.cpp(78,11): error C2065: 'D_ERROR': 定義されていない識別子です。
+C:\PG\マッチ３\match3\match3(Visual Studio)\match3(Visual Studio)\AppMain.cpp(82,3): error C3861: 'FreamControl_Initialize': 識別子が見つかりませんでした
+C:\PG\マッチ３\match3\match3(Visual Studio)\match3(Visual Studio)\AppMain.cpp(83,3): error C3861: 'Input_Initialize': 識別子が見つかりませんでした
+C:\PG\マッチ３\match3\match3(Visual Studio)\match3(Visual Studio)\AppMain.cpp(87,31): error C2065: 'E_TITLE': 定義されていない識別子です。
+C:\PG\マッチ３\match3\match3(Visual Studio)\match3(Visual Studio)\AppMain.cpp(87,7): error C3861: 'SceneManager_Initialize': 識別子が見つかりませんでした
+C:\PG\マッチ３\match3\match3(Visual Studio)\match3(Visual Studio)\AppMain.cpp(87,43): error C2065: 'D_ERROR': 定義されていない識別子です。
+C:\PG\マッチ３\match3\match3(Visual Studio)\match3(Visual Studio)\AppMain.cpp(89,11): error C2065: 'D_ERROR': 定義されていない識別子です。
+C:\PG\マッチ３\match3\match3(Visual Studio)\match3(Visual Studio)\AppMain.cpp(99,10): error C3861: 'ProcessMassage': 識別子が見つかりませんでした
+C:\PG\マッチ３\match3\match3(Visual Studio)\match3(Visual Studio)\AppMain.cpp(99,30): error C2065: 'D_ERROR': 定義されていない識別子です。
+C:\PG\マッチ３\match3\match3(Visual Studio)\match3(Visual Studio)\AppMain.cpp(99,41): error C3861: 'Input_Escape': 識別子が見つかりませんでした
+C:\PG\マッチ３\match3\match3(Visual Studio)\match3(Visual Studio)\AppMain.cpp(102,4): error C3861: 'Input_Update': 識別子が見つかりませんでした
+C:\PG\マッチ３\match3\match3(Visual Studio)\match3(Visual Studio)\AppMain.cpp(108,4): error C3861: 'SceneManager_Draw': 識別子が見つかりませんでした
+C:\PG\マッチ３\match3\match3(Visual Studio)\match3(Visual Studio)\AppMain.cpp(111,4): error C3861: 'Freamcontrol_Update': 識別子が見つかりませんでした
