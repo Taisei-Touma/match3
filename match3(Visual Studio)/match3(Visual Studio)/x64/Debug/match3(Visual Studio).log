@@ -17,3 +17,6 @@ C:\PG\マッチ３\match3\match3(Visual Studio)\match3(Visual Studio)\AppMain.cp
 C:\PG\マッチ３\match3\match3(Visual Studio)\match3(Visual Studio)\AppMain.cpp(102,4): error C3861: 'Input_Update': 識別子が見つかりませんでした
 C:\PG\マッチ３\match3\match3(Visual Studio)\match3(Visual Studio)\AppMain.cpp(108,4): error C3861: 'SceneManager_Draw': 識別子が見つかりませんでした
 C:\PG\マッチ３\match3\match3(Visual Studio)\match3(Visual Studio)\AppMain.cpp(111,4): error C3861: 'Freamcontrol_Update': 識別子が見つかりませんでした
+  ソース.cpp
+C:\PG\マッチ３\match3\match3(Visual Studio)\match3(Visual Studio)\ソース.cpp(3,10): fatal  error C1083: include ファイルを開けません。'FreamControl.h':No such file or directory
+  コードを生成中...
