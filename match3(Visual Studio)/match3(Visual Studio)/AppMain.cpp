@@ -1,3 +1,5 @@
+//AppMain_cpp.pdf
+
 #include "DxLib.h"
 
 int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
