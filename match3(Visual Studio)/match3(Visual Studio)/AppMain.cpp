@@ -1,26 +1,5 @@
 //AppMain_cpp.pdf
-
-#include "DxLib.h"
-
-int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
-	_In_ LPSTR lpCmdLine, _In_ int nShowCmd)
-{
-	//ウィンドウモードで起動
-	ChangeWindowMode(TRUE);
-
-	//Dxライブラリの初期化処理
-	if (DxLib_Init() == -1)
-	{
-
-		return -1;
-
-	}
-
-	//入力待機
-	WaitKey();
-#include<stdio.h>
 	
-
 	/**********************
 *プログラム実習
 :マッチ３のゲーム制作
@@ -59,8 +38,8 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
 /**********************
 *プログラムの開始
 **********************/
-	int WINAPI WinMain(_In_HINSTANCE hInstance, _In_opt_HINSTANCE hPrevInstance,
-		_In_LPSTR lpCmdLine, _In_int nShowCmd)
+	int WINAPI WinMain( _In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
+		 _In_ LPSTR lpCmdLine, _In_ int nShowCmd)
 	{
 
 
@@ -121,12 +100,6 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
 
 		return 0;
 	}
-	
-
-	
-
-	return 0;
-}
 
 
 

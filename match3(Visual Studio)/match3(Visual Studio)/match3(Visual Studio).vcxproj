@@ -135,8 +135,15 @@
     <ClCompile Include="FreamControl.cpp" />
     <ClCompile Include="GameClearScene.cpp" />
     <ClCompile Include="GameMainScene.cpp" />
-    <ClCompile Include="ソース3.cpp" />
-    <ClCompile Include="ソース4.cpp" />
+    <ClCompile Include="FreamControl_h.cpp" />
+    <ClCompile Include="GameClearScene_h.cpp" />
+    <ClCompile Include="GameMainScene_h.cpp" />
+    <ClCompile Include="GameOverScene.cpp" />
+    <ClCompile Include="GameOverScene_h.cpp" />
+    <ClCompile Include="InputControl_h.cpp" />
+    <ClCompile Include="SceneManager_h.cpp" />
+    <ClCompile Include="Stage_h.cpp" />
+    <ClCompile Include="TitleScene_h.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
