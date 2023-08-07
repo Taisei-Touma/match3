@@ -39,7 +39,7 @@ int LastTime;
 
 void FreamControl_Initialize(void)
 {
-	void FreamTime = ((int)1000.0f / FREAM_RATE);
+	FreamTime = ((int)1000.0f / FREAM_RATE);
 	NowTime = 0;
 	Wait = 0;
 	LastTime = 0;
@@ -54,7 +54,8 @@ void FreamControl_Update(void)
 	NowTime = GetNowCount();
 	Wite = FreamTime - (NowTime - LastTime);
 
-	if (Wait > 0) {
+	if (Wait > 0) 
+	{
 		WaitTimer(Wait);
 	}
 	LastTime = GetNowCount();

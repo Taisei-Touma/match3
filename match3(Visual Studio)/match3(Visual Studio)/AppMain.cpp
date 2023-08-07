@@ -5,7 +5,10 @@
 :マッチ３のゲーム制作
 **********************/
 
-#include"DxLib.h"
+#include "DxLib.h"
+#include "FreamControl.h"
+#include "InputControl.h"
+#include "SceneManager.h"
 
 
 /**********************
@@ -50,9 +53,8 @@
 		//画面サイズの最大サイズ、カラービット数を設定
 		SetGraphMode(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_COLORBIT);
 
-		//Dxライブラリ初期化処理
 
-
+	//Dxライブラリ初期化処理
 	//エラーが発生したら、終了する
 		if (DxLib_Init() == D_ERROR)
 		{
