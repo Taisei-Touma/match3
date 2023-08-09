@@ -86,13 +86,13 @@ int StageInitialize(void)
 	int i;
 
 	//画像読み込み
-	LaodDivGraph("images/block.png", BLOCK_IMAGE_MAX, 1, BLOCKSIZE, BLOCKSIZE, BlockImage);
+	LoadDivGraph("images/block.png", BLOCK_IMAGE_MAX, 1, BLOCKSIZE, BLOCKSIZE, BlockImage);
 	StageImage = LoadGraph("images/stage.png");
 
 	//音源読み込み
 	ClickSE = LoadSoundMem("sounds/click_se.mp3");
 	FadeOutSE = LoadSoundMem("sounds/fadeout_se.mp3");
-	MoveBlock = LoadSoundMem("sounds/moveblock_se.mp3");
+	MoveBlockSE = LoadSoundMem("sounds/moveblock_se.mp3");
 
 	//ブロック生成処理
 	CreateBlock();
@@ -165,7 +165,7 @@ void StageDraw(void) {
 }
 	//選択ブロックを描画
 	DrawGraph(Select[SELECT_CURSOR].x * BLOCKSIZE, Select[SELECT_CURSOR].y *
-		BLOCKSiZE, BlockImage[9], TRUE);
+		BLOCKSIZE, BlockImage[9], TRUE);
 	if (ClickStatus != E_NONE)
 	{
 		DrawGraph(Select[NEXT_CURSOR].x * BLOCKSIZE,
@@ -283,7 +283,7 @@ void SelectBlock(void)
 	if (GetKeyFlg(MOUSE_INPUT_LEFT))
 	{
 		//クリック効果音
-		PlaySoundMem(ClicsSE, DX_PLAYTYPE_BACK);
+		PlaySoundMem(ClickSE, DX_PLAYTYPE_BACK);
 
 		if (ClickStatus == E_NONE)
 		{
@@ -311,9 +311,134 @@ void SelectBlock(void)
 		}
 	}
 	//選択ブロックを交換する
-	if(ClickStatus == E_SECOND)
+	if (ClickStatus == E_SECOND)
+	{
+		TmpBlock = Block[Select[NEXT_CURSOR].y + 1][Select[NEXT_CURSOR].x + 1].image;
 
+		Block[Select[NEXT_CURSOR].y + 1][Select[NEXT_CURSOR].x + 1].image 
+			=
+		Block[Select[TMP_CURSOR].y + 1][Select[TMP_CURSOR].x + 1].image;
+
+		Block[Select[TMP_CURSOR].y + 1][Select[TMP_CURSOR].x + 1].image
+			= TmpBlock;
+
+		//連鎖が３つ以上か調べる
+		Result = 0;
+
+		Result += combo_check(Select[NEXT_CURSOR].y + 1,
+			Select[NEXT_CURSOR].x + 1);
+
+		Result += combo_check(Select[TMP_CURSOR].y + 1,
+			Select[TMP_CURSOR].x + 1);
+
+		//連鎖が３未満なら選択ブロックをもとに戻す
+		if (Result == 0)
+		{
+			int TmpBlock = Block[Select[NEXT_CURSOR].y + 1]
+				[Select[NEXT_CURSOR].x + 1].image;
+
+			Block[Select[NEXT_CURSOR].y + 1][Select[NEXT_CURSOR].x + 1].image
+				=
+				Block[Select[TMP_CURSOR].y + 1][Select[TMP_CURSOR].x + 1].image;
+
+			Block[Select[TMP_CURSOR].y + 1][Select[TMP_CURSOR].x + 1].image
+				= TmpBlock;
+		}
+		else
+		{
+			//連鎖が３つ以上ならブロックを消しブロック移動処理へ移行する
+			Stage_State = 1;
+		}
+		//次にクリックできるようにClockFlagを0にする
+		ClickStatus = E_NONE;
+	}
 }
+
+/*********************
+* ステージ制御機能：フェードアウト処理
+* 引数；なし
+* 戻り値：なし
+*********************/
+void FadeOutBlock(void)
+{
+	static int BlendMode = 255;
+	int i, j;
+
+	//フェードアウト効果音
+	if (CheckSoundMem(FadeOutSE) == 0)
+	{
+		PlaySoundMem(FadeOutSE, DX_PLAYTYPE_BACK);
+	}
+	//描画モードをアルファブレンドにする
+	SetDrawBlendMode(DX_BLENDGRAPHTYPE_ALPHA, BlendMode);
+	for (i = 1; i < HEIGHT - 1; i++)
+	{
+		for (j = 1; j < WIDTH - 1; j++)
+		{
+			if (Block[i][j].image == 0)
+			{
+				DrawGraph(Block[i][j].x, Block[i][j].y,
+					BlockImage[Block[i][j].backup], TRUE);
+			}
+		}
+	}
+	//描画モードをノーブレンドにする
+	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+	BlendMode -= 5;
+
+	if (BlendMode == 0)
+	{
+		BlendMode = 255;
+		Stage_State = 2;
+		StopSoundMem(FadeOutSE);
+	}
+}
+
+/*********************
+* ステージ制御機能：ブロック移動処理
+* 引数；なし
+* 戻り値：なし
+*********************/
+void MoveBlock(void)
+{
+	int i, j, k;
+	//ブロック移動効果音
+	PlaySoundMem(MoveBlockSE, DX_PLAYTYPE_BACK);
+	//↓へ移動する処理
+	for (i = 1; i < HEIGHT - 1; i++)
+	{
+		for (j = 1; j < WIDTH - 1; j++)
+		{
+			if (Block[i][j].image == 0)
+			{
+				for (k = i; k > 0; k--)
+				{
+					Block[k][j].image = Block[k - 1][j].image;
+					Block[k - 1][j].image = 0;
+				}
+			}
+		}
+	}
+	//空のブロックを生成する処理
+	for (i = 1; i < HEIGHT - 1; i++)
+	{
+		for (j = 1; j < WIDTH - 1; j++)
+		{
+
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
