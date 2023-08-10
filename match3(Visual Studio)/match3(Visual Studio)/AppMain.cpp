@@ -79,7 +79,7 @@
 		SetFontSize(FONT_SIZE);
 
 		//ゲームループ
-		while (ProcessMassage() != D_ERROR && Input_Escape() == FALSE)
+		while (ProcessMessage() != D_ERROR && Input_Escape() == FALSE)
 		{
 			//入力制御機能更新処理
 			Input_Update();
@@ -91,7 +91,7 @@
 			SceneManager_Draw();
 
 			//フレームレート制御処理
-			Freamcontrol_Update();
+			FreamControl_Update();
 
 			//画面の内容を表画面に反映
 			ScreenFlip();

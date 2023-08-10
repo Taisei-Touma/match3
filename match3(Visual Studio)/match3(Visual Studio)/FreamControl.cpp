@@ -52,7 +52,7 @@ void FreamControl_Initialize(void)
 void FreamControl_Update(void)
 {
 	NowTime = GetNowCount();
-	Wite = FreamTime - (NowTime - LastTime);
+	Wait = FreamTime - (NowTime - LastTime);
 
 	if (Wait > 0) 
 	{

@@ -68,9 +68,9 @@ int GameMainScene_Initialize(void)
 	else
 	{
 		GameLevel++;		//ゲームレベルの更新
-		Set_StageMission(3) //ミッションを増やす
+		Set_StageMission(3); //ミッションを増やす
 	}
-	GemeTime = TIMELIMIT;	//制限時間の初期化
+	GameTime = TIMELIMIT;	//制限時間の初期化
 
 	return ret;
 }
@@ -94,11 +94,11 @@ void GameMainScene_Update(void)
 			break;
 
 		case3:
-			CheckBlook();	//ブロックの確認
+			CheckBlock();	//ブロックの確認
 				break;
 
 		case 4:
-			CheckClear() :	//クリアチェック
+			CheckClear();	//クリアチェック
 				break;
 
 		default:
@@ -107,7 +107,7 @@ void GameMainScene_Update(void)
 	}
 
 	//制限時間の更新
-	GetTime--;
+	GameTime--;
 
 	//制限時間がなくなったら、ゲームオーバーに　　する
 	if (GameTime < 0)

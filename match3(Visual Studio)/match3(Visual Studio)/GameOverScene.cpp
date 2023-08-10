@@ -52,7 +52,7 @@ int GameOverScene_Initialize(void)
 void GameOverScene_Update(void)
 {
 	//ゲームオーバー効果音再生チェック
-	if (ChekSoundMem(GameOverSE) == 0)
+	if (CheckSoundMem(GameOverSE) == 0)
 	{
 		if (GameOverFlag == TRUE)
 		{
