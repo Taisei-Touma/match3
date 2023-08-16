@@ -1,5 +1,3 @@
-// InputControl_cpp.pdf
-
 #include "DxLib.h"
 #include "InputControl.h"
 
