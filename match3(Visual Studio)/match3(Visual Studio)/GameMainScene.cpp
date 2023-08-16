@@ -1,5 +1,3 @@
-//GameMainScene_cpp.pdf
-
 #include "GameMainScene.h"
 #include "DxLib.h"
 #include "Stage.h"
@@ -8,8 +6,8 @@
 /**************************
 * マクロ定義
 **************************/
-#define TIMELIMIT	(3600 * 3) //制限時間
-#define NUMBER_IMAGE_MAX　(10) //数字画像数
+#define TIMELIMIT				(3600 * 3) //制限時間
+#define NUMBER_IMAGE_MAX (10)		 //数字画像数
 /**************************
 *型定義
 **************************/
@@ -24,7 +22,7 @@ int GameTime;
 int GameCount; //初期化されないようにするためのカウント
 int ReStartFlag;
 
-int NUmberImage[NUMBER_IMAGE_MAX];	//数字用画像
+int NumberImage[NUMBER_IMAGE_MAX];	//数字用画像
 
 /**************************
 * プロトタイプ宣言
@@ -131,7 +129,7 @@ void GameMainScene_Draw(void)
 {
 	int PosX = 600;
 	int tmp_level = GameLevel;
-	int tmo_score = Get_StageScore();
+	int tmp_score = Get_StageScore();
 
 	//ステージを描画
 	StageDraw();

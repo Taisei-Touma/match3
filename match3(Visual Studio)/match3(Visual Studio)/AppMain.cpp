@@ -1,6 +1,4 @@
-//AppMain_cpp.pdf
-	
-	/**********************
+/**********************
 *プログラム実習
 :マッチ３のゲーム制作
 **********************/
@@ -41,10 +39,9 @@
 /**********************
 *プログラムの開始
 **********************/
-	int WINAPI WinMain( _In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
-		 _In_ LPSTR lpCmdLine, _In_ int nShowCmd)
+	int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
+	_In_ LPSTR lpCmdLine, _In_ int nShowCmd)
 	{
-
 
 		//ウィンドウタイトル設定
 		SetMainWindowText("Match 3 Puzzle");
@@ -63,7 +60,7 @@
 
 		//各機能の初期化処理
 		FreamControl_Initialize();		//フレームレート制御機能
-		Input_Initialize();				//入力制限
+		Input_Initialize();				//入力制御機能
 
 		//シーンマネージャー初期化処理
 		//エラーが発生したら終了する
@@ -83,6 +80,9 @@
 		{
 			//入力制御機能更新処理
 			Input_Update();
+
+			//シーンマネージャー更新処理
+			SceneManager_Update();
 
 			//画面クリア
 			ClearDrawScreen();

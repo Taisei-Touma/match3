@@ -1,5 +1,3 @@
-//GameClearScene_cpp.pdf
-
 #include "GameClearScene.h"
 #include "DxLib.h"
 #include "SceneManager.h"

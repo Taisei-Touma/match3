@@ -37,7 +37,7 @@ enum
 {
 	E_NONE,
 	E_ONCE,
-	E_SECOND,
+	E_SECOND
 };
 
 /**********************
@@ -48,6 +48,7 @@ T_CURSOR Select[3];				//セレクトカーソル座標
 int Item[ITEM_MAX];
 int ClickStatus;
 int Stage_State;
+int Stage_Mission;
 int Stage_Score;
 int ClearFlag;
 
@@ -60,15 +61,6 @@ int MoveBlockSE;					//ブロック移動SE
 /**********************
 *プロトタイプ宣言
 **********************/
-int combo_check(int x, int y);
-void combo_check_h(int y, int x, int* cnt, int* col);
-void combo_check_w(int y, int x, int* cnt, int* col);
-void save_block(void);
-void restore_block(void);
-
-/************************
-*プロトタイプ宣言
-************************/
 int combo_check(int x, int y);
 void combo_check_h(int y, int x, int* cnt, int* col);
 void combo_check_w(int y, int x, int* cnt, int* col);
@@ -441,7 +433,7 @@ void MoveBlock(void)
 ***********************************/
 void CheckBlock(void)
 {
-	int Reslt = 0;
+	int Result = 0;
 	int i, j;
 
 	//ブロック連鎖チェック
@@ -469,7 +461,7 @@ void CheckBlock(void)
 * ステージ制御機能：クリア条件チェック処理
 * 引数：なし
 * 戻り値：なし
-* 備考：クリア女王件フラグを0とし、各スクールの削除ブロックが
+* 備考：クリア条件フラグを0とし、各スクールの削除ブロックが
 		レヴェルよりも数が少なくなったらチェック処理を中断してゲームを続行する
 ***********************************/
 void CheckClear(void)

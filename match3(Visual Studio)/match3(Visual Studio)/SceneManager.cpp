@@ -16,7 +16,7 @@
 * 変数宣言
 **************************/
 GAME_MODE Game_Mode;	//ゲームモード情報(現在)
-GAME_MODE Next_Moode;	//ゲームモード情報(次)
+GAME_MODE Next_Mode;	//ゲームモード情報(次)
 /**************************
 * プロトタイプ宣言
 **************************/
@@ -93,12 +93,35 @@ void SceneManager_Update(void)
 * 引数:なし
 * 戻り値:なし
 **************************/
-
 void SceneManager_Draw(void)
 {
-	Next_Mode = mode;
+	//各画面の描画処理
+	switch (Game_Mode)
+	{
+	case E_TITLE:
+		TitleScene_Draw();
+		break;
+
+	case E_GAMEMAIN:
+		GameMainScene_Draw();
+		break;
+
+	case E_GAME_CLEAR:
+		GameClearScene_Draw();
+		break;
+
+	default:
+		break;
+	}
 }
 
+
+/************************
+* シーン管理機能：シーン切替処理
+* 引数：変更するゲームモード
+* 戻り値：なし
+* **********************/
 void Change_Scene(GAME_MODE mode)
 {
+	Next_Mode = mode;
 }
