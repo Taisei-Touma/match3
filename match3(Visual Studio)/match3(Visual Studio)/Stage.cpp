@@ -416,7 +416,7 @@ void MoveBlock(void)
 	{
 		for (j = 1; j < WIDTH - 1; j++)
 		{
-			if (Block[i][j].image == 0);
+			if (Block[i][j].image == 0)
 			{
 				Block[i][j].image = GetRand(7) + 1;
 			}
@@ -642,18 +642,3 @@ void restore_block(void)
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

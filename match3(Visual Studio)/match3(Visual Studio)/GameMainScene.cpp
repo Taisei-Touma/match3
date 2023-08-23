@@ -91,7 +91,7 @@ void GameMainScene_Update(void)
 			MoveBlock();	//ブロックを移動させる。
 			break;
 
-		case3:
+		case 3:
 			CheckBlock();	//ブロックの確認
 				break;
 
@@ -137,7 +137,7 @@ void GameMainScene_Draw(void)
 	//フェードアウト状態か？
 	if (Get_StageState() == 1)
 	{
-		FadeOutBlock;	//フェードアウトする
+		FadeOutBlock();	//フェードアウトする
 	}
 
 	//レベルを描画
