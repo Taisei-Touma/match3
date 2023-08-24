@@ -37,6 +37,12 @@ int SceneManager_Initialize(GAME_MODE mode)
 	{
 		return D_ERROR;
 	}
+	//ゲームメイン画面
+	Read_Error = GameMainScene_Initialize();
+	if (Read_Error == D_ERROR)
+	{
+		return D_ERROR;
+	}
 	//ゲームクリア画面
 	Read_Error = GameClearScene_Initialize();
 	if (Read_Error == D_ERROR)
@@ -108,6 +114,10 @@ void SceneManager_Draw(void)
 
 	case E_GAME_CLEAR:
 		GameClearScene_Draw();
+		break;
+
+	case E_GAME_OVER:
+		GameOverScene_Draw();
 		break;
 
 	default:

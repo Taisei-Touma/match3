@@ -1,5 +1,3 @@
-//GameOverScene
-
 #include "GameOverScene.h"
 #include "DxLib.h"
 #include "SceneManager.h"
@@ -16,7 +14,7 @@ int GameOverFlag;
 **************************/
 
 /**************************
-* ゲームメイン画面:初期化処理
+* ゲームオーバー画面:初期化処理
 * 引数:なし
 * 戻り値:エラー情報
 **************************/
@@ -47,7 +45,7 @@ int GameOverScene_Initialize(void)
 /**************************
 * ゲームオーバー画面:更新処理
 * 引数:なし
-* 戻り値:エラー情報
+* 戻り値:なし
 **************************/
 void GameOverScene_Update(void)
 {

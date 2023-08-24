@@ -155,7 +155,7 @@ void StageDraw(void) {
 					BlockImage[Block[i][j].image], TRUE);
 			}
 		}
-}
+	}
 	//選択ブロックを描画
 	DrawGraph(Select[SELECT_CURSOR].x * BLOCKSIZE, Select[SELECT_CURSOR].y *
 		BLOCKSIZE, BlockImage[9], TRUE);
@@ -285,7 +285,7 @@ void SelectBlock(void)
 		if (ClickStatus == E_NONE)
 		{
 			Select[NEXT_CURSOR].x = Select[SELECT_CURSOR].x;
-			Select[NEXT_CURSOR].x = Select[SELECT_CURSOR].y;
+			Select[NEXT_CURSOR].y = Select[SELECT_CURSOR].y;
 			ClickStatus = E_ONCE;
 		}
 		else if (ClickStatus == E_ONCE &&
@@ -427,7 +427,7 @@ void MoveBlock(void)
 			}
 		}
 	}
-	//連鎖チェックへ移行する
+	//連鎖チェック,へ移行する
 	Stage_State = 3;
 }
 
@@ -533,7 +533,7 @@ void Set_StageMission(int mission)
 * 引数２：ブロックXマス
 * 戻り値：連鎖有無(0:無し　1: あり)
 ***********************************/
-int conbo_check(int y, int x)
+int combo_check(int y, int x)
 {
 	int ret = FALSE;
 
@@ -568,7 +568,7 @@ int conbo_check(int y, int x)
 
 		if (CountW >= 3)
 		{
-			Item[ColorW - 1] += CountH;
+			Item[ColorW - 1] += CountW;
 			Stage_Score += CountW * 10;
 		}
 
