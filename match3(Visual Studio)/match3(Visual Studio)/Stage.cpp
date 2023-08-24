@@ -78,7 +78,8 @@ int StageInitialize(void)
 	int i;
 
 	//画像読み込み
-	LoadDivGraph("images/block.png", BLOCK_IMAGE_MAX, BLOCK_IMAGE_MAX, 1, BLOCKSIZE, BLOCKSIZE, BlockImage);
+	LoadDivGraph("images/block.png", BLOCK_IMAGE_MAX, BLOCK_IMAGE_MAX, 1, 
+		BLOCKSIZE, BLOCKSIZE, BlockImage);
 	StageImage = LoadGraph("images/stage.png");
 
 	//音源読み込み
@@ -165,6 +166,10 @@ void StageDraw(void) {
 		}
 
 	//ミッションを描画
+	SetFontSize(20);
+	DrawFormatString(590, 211, GetColor(255, 255, 255), "%3d", Stage_Mission);
+
+	//アイテムの取得個数を描画
 	for (int i = 0; i < ITEM_MAX; i++)
 	{
 		DrawRotaGraph(540, 245 + i * 30, 0.5f, 0, BlockImage[i + 1], TRUE, 0);
@@ -439,7 +444,7 @@ void CheckBlock(void)
 	//ブロック連鎖チェック
 	for (i = 1; i < HEIGHT - 1; i++)
 	{
-		for (j = 1; j < HEIGHT - 1; j++)
+		for (j = 1; j < WIDTH - 1; j++)
 		{
 			Result += combo_check(i, j);
 		}
@@ -504,6 +509,16 @@ int Get_StageCleaFlag(void)
 
 /***********************************
 * ステージ制御機能：ミッション情報取得処理
+* 引数：なし
+* 戻り値：ミッションがクリアしているか
+***********************************/
+int Get_StageScore(void)
+{
+	return Stage_Score;
+}
+
+/***********************************
+* ステージ制御機能：ミッション情報取得処理
 * 引数：次ミッションに必要な数値
 * 戻り値：なし
 ***********************************/
@@ -550,6 +565,13 @@ int conbo_check(int y, int x)
 			Item[ColorH - 1] += CountH;
 			Stage_Score += CountH * 10;
 		}
+
+		if (CountW >= 3)
+		{
+			Item[ColorW - 1] += CountH;
+			Stage_Score += CountW * 10;
+		}
+
 		ret = TRUE;
 	}
 	return ret;
@@ -575,6 +597,10 @@ void combo_check_h(int y, int x, int* cnt, int* col)
 
 	if (Block[y + 1][x].image == Color)
 	{
+		combo_check_h(y + 1, x, cnt, col);
+	}
+	if (Block[y + 1][x].image == Color)
+	{
 		combo_check_h(y - 1, x, cnt, col);
 	}
 }
@@ -592,6 +618,7 @@ void combo_check_w(int y, int x, int* cnt, int* col)
 	{
 		return;
 	}
+
 	*col = Block[y][x].image;
 	Color = Block[y][x].image;	//色取得
 	Block[y][x].image = 0;

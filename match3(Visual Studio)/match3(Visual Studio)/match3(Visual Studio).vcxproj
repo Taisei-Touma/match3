@@ -151,23 +151,6 @@
     <ClInclude Include="Stage.h" />
     <ClInclude Include="TitleScene.h" />
   </ItemGroup>
-  <ItemGroup>
-    <Image Include="images\block.png" />
-    <Image Include="images\gameclear.png" />
-    <Image Include="images\gameover.png" />
-    <Image Include="images\number.png" />
-    <Image Include="images\stage.png" />
-    <Image Include="images\stage1.png" />
-    <Image Include="images\title.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Media Include="sounds\click_se.mp3" />
-    <Media Include="sounds\fadeout_se.mp3" />
-    <Media Include="sounds\gameclear_se.mp3" />
-    <Media Include="sounds\gameover_se.mp3" />
-    <Media Include="sounds\moveblock_se.mp3" />
-    <Media Include="sounds\title_bgm.mp3" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
