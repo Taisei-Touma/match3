@@ -502,7 +502,7 @@ int Get_StageState(void)
 * 引数：なし
 * 戻り値：ミッションがクリアしているか
 ***********************************/
-int Get_StageCleaFlag(void)
+int Get_StageClearFlag(void)
 {
 	return ClearFlag;
 }
@@ -628,7 +628,7 @@ void combo_check_w(int y, int x, int* cnt, int* col)
 	{
 		combo_check_w(y, x+1, cnt, col);
 	}
-	if (Block[y][x + 1].image == Color)
+	if (Block[y][x - 1].image == Color)
 	{
 		combo_check_w(y, x - 1, cnt, col);
 	}

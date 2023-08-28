@@ -115,6 +115,7 @@ void GameMainScene_Update(void)
 
 	//ミッションを達成したら、ゲームクリアに　　する
 	if (Get_StageClearFlag())
+
 	{
 		Change_Scene(E_GAME_CLEAR);
 	}
