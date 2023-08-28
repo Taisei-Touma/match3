@@ -41,6 +41,8 @@ int TitleScene_Initialize(void)
 	{
 		ret = D_ERROR;
 	}
+
+
 	return ret;
 }
 

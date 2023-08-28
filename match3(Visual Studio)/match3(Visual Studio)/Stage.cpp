@@ -524,7 +524,7 @@ int Get_StageScore(void)
 ***********************************/
 void Set_StageMission(int mission)
 {
-	Stage_Mission += mission;
+	Stage_Mission += mission;	//クリア条件の「ブロックを消す回数」を増やす・・
 }
 
 /***********************************

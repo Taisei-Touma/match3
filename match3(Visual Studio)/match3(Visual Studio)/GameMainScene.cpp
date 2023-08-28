@@ -19,10 +19,12 @@ int GameScore;
 int GameLevel;
 int GameMission;
 int GameTime;
-int GameCount; //初期化されないようにするためのカウント
+int GameCount; //初期化されないようにするためのカウント;
 int ReStartFlag;
 
 int NumberImage[NUMBER_IMAGE_MAX];	//数字用画像
+
+
 
 /**************************
 * プロトタイプ宣言
@@ -35,6 +37,7 @@ int NumberImage[NUMBER_IMAGE_MAX];	//数字用画像
 **************************/
 int GameMainScene_Initialize(void)
 {
+
 	int ret = 0;
 	int i;
 
@@ -63,7 +66,7 @@ int GameMainScene_Initialize(void)
 		Set_StageMission(3);	//ミッションの初期化
 		GameCount++;			//次回の設定
 	}
-	else
+	else 
 	{
 		GameLevel++;		//ゲームレベルの更新
 		Set_StageMission(3); //ミッションを増やす

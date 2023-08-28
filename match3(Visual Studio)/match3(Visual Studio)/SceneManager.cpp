@@ -33,7 +33,7 @@ int SceneManager_Initialize(GAME_MODE mode)
 	//シーン読み込み処理
 	//タイトル画面
 	Read_Error = TitleScene_Initialize();
-	if (Read_Error == D_ERROR);
+	if(Read_Error == D_ERROR)
 	{
 		return D_ERROR;
 	}
