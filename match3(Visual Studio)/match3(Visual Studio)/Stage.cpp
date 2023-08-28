@@ -599,7 +599,7 @@ void combo_check_h(int y, int x, int* cnt, int* col)
 	{
 		combo_check_h(y + 1, x, cnt, col);
 	}
-	if (Block[y + 1][x].image == Color)
+	if (Block[y - 1][x].image == Color)
 	{
 		combo_check_h(y - 1, x, cnt, col);
 	}
