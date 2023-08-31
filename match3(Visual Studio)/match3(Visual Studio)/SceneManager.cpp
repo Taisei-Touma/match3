@@ -83,12 +83,14 @@ void SceneManager_Update(void)
 		case E_GAMEMAIN:
 			GameMainScene_Update();
 			break;
+
 		case E_GAME_CLEAR:
 			GameClearScene_Update();
 			break;
 		case E_GAME_OVER:
 			GameOverScene_Update();
-			break;
+
+		
 		default:
 			break;
 	}
